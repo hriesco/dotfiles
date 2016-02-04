@@ -18,4 +18,4 @@
 			
 	`git clone https://github.com/hriesco/dotfiles`
 
-	`cp -R * ~/`
+	`cp -r ./ ~/`
