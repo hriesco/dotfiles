@@ -8,6 +8,10 @@
 
 ## Requirements
 
+* Zsh 
+
+  `sudo aptitude install zsh`
+
 * Set zsh as your login shell
  
   `chsh -s $(which zsh)`
@@ -19,3 +23,5 @@
 	`git clone https://github.com/hriesco/dotfiles`
 
 	`cp -r ./ ~/`
+	
+	`cp alias.zsh ~/.oh-my-zsh/lib/`
