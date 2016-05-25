@@ -7,7 +7,7 @@
 "
 "  
 "
-" Maintainer: hriesco
+" Maintainer: Héctor Riesco
 " Version: 0.1
 " Last Change: 14.01.2016
 " Sections:
@@ -15,9 +15,12 @@
 
 " Properties
 " -----------------------------------------------
+set hidden
 set colorcolumn=80
 set backspace=indent,eol,start
 set nocompatible
+set nocp
+set cindent
 set laststatus=2
 set fileencoding=utf-8 
 set hls is
@@ -40,6 +43,15 @@ set swapfile
 set mouse=a
 set breakindent
 set history=1000
+
+" change the mapleader from \ to ,
+let mapleader=","
+
+" Select All
+map <C-a> <esc>ggVG<CR>
+
+" Tagbar 
+nmap <F8> :TagbarToggle<CR>
 
 " Build
 map <F9> :make -j 2 && make run<CR>
@@ -76,9 +88,10 @@ colorscheme  koehler
 execute pathogen#infect()
 
 " Autoexecute NERDTree"
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
 "autocmd BufEnter * NERDTreeMirror " add folder tree to the left hand side for each tab
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 "Easymotion
 
@@ -98,3 +111,17 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" OmniCppComplete
+set tags+=/home/rotceh/tags
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=c++ /usr/include /usr/local/include<CR>
+
+" omnicompletion : words
+inoremap <leader>, <C-x><C-o>
+" omnicompletion : filenames
+inoremap <leader>: <C-x><C-f>
+" omnicompletion : lines
+inoremap <leader>= <C-x><C-l>
+" Lightline
+
+
