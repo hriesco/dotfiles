@@ -32,3 +32,4 @@ alias xamppstart="sudo /opt/lampp/xampp start"
 
 alias ev="vim ~/.vimrc"
 alias ea="vim ~/.bash_aliases"
+alias eb="vim ~/.bashrc"
