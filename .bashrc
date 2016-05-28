@@ -2,25 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# color variables
-RESTORE='\033[0m'
-
-RED='\033[00;31m'
-GREEN='\033[00;32m'
-YELLOW='\033[00;33m'
-BLUE='\033[00;34m'
-PURPLE='\033[00;35m'
-CYAN='\033[00;36m'
-LIGHTGRAY='\033[00;37m'
-
-LRED='\033[01;31m'
-LGREEN='\033[01;32m'
-LYELLOW='\033[01;33m'
-LBLUE='\033[01;34m'
-LPURPLE='\033[01;35m'
-LCYAN='\033[01;36m'
-WHITE='\033[01;37m'
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -76,12 +57,15 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-	export PS1="\[${LGREEN}\]╭──\[${LCYAN}\][\[${LGREEN}\]\u\[${LCYAN}\]\[${LPURPLE}\]@\[${LGREEN}\]\h\[${LCYAN}\]] [\[${LCYAN}\]\t\[${LBLUE}\]]\[${LRED}\] \w\n\[${LGREEN}\]╰─>\[${LCYAN}\][\\$]\[${RESTORE}\] "
+	PS1='\[\e[01;30m\]\t`if [ $? = 0 ]; then echo "\[\e[32m\] ✔ "; else echo "\[\e[31m\] ✘ "; fi`\[\e[00;37m\]\u\[\e[01;37m\]:`[[ $(git status 2> /dev/null | head -n2 | tail -n1) != "# Changes to be committed:" ]] && echo "\[\e[31m\]" || echo "\[\e[33m\]"``[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] || echo "\[\e[32m\]"`$(__git_ps1 "(%s)\[\e[00m\]")\[\e[01;34m\]\w\[\e[00m\]\$ '
+	
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-	export PS1="\[${LGREEN}\]╭──\[${LCYAN}\][\[${LGREEN}\]\u\[${LCYAN}\]\[${LPURPLE}\]@\[    ${LGREEN}\]\h\[${LCYAN}\]] [\[${LCYAN}\]\t\[${LBLUE}\]]\[${LRED}\] \w\n\[${LGREEN}\]╰─>\    [${LCYAN}\][\\$]\[${RESTORE}\] "
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
+# If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
@@ -93,29 +77,11 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+if command -v tmux>/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -132,19 +98,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Mis alias
-alias tiempoMadrid='weather LEMD'
-alias tiempoGetafe='weather LEGT'
-
-alias cd1="cd .."
-alias cd2="cd ../.."
-alias cd3="cd ../../.."
-alias cd4="cd ../../../.."
-alias cd5="cd ../../../../.."
-
-alias ippublica="curl ipv4.icanhazip.com"
-
-#alias ollydbg="ollydbg &> /dev/null &"
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
-export PATH=$JAVA_HOME/bin:$PATH
+git config --global user.name "hriesco"
+git config --global user.email "hectorriesco@hotmail.com"
 
