@@ -1,0 +1,67 @@
+# CONFIGURE
+--------------------------------------------------------------------------------
+git config --global user.name "username"
+git config --global user.email email@host.com
+
+# CREATE
+--------------------------------------------------------------------------------
+- Primero crear un repositorio desde la pagina de git
+
+git init			-> Crea un nuevo repositorio
+git add .			-> Añade todos los archivos del proyecto
+git commit -m "Cm"		-> Añade comentario al commit
+git remote add origin <url>	-> Conecta repositorio local con remoto
+git push -u origin master	-> Sube todos los cambios al servidor
+
+git clone <url>			-> Clona un repositorio remoto
+
+# LOCAL CHANGES
+--------------------------------------------------------------------------------
+git status			-> Muestra los cambios de los ficheros
+git add .			-> Añade los nuevos cambios al siguiente commit
+git commit -a			-> Commit de todos los ficheros modificados
+
+# COMMIT HISTORY
+--------------------------------------------------------------------------------
+git log				-> Muestra todos los commits ordenados por fecha
+git log -p <file>		-> Muestra los cambios en el tiempo de un fichero
+git blame <file>		-> Quien, que y cuando modifico el fichero
+
+# BRANCHES
+--------------------------------------------------------------------------------
+git branch -av			-> Lista todos los branches
+git checkout <branch>		-> Moverse a un branch
+git branch <branch>		-> Crea un nuevo branch
+git branch -d <branch>		-> Borra un branch en local
+git branch -dr <re/bra>		-> Borra un branch <remoto/branch>
+
+# UPDATE & PUBLISH
+--------------------------------------------------------------------------------
+git remote -v			-> Lista los remotos actuales
+git remote add origin <server>	-> Conecta repositorio local con remoto
+git fetch <remote>		-> Descarga los cambios de remote sin integrarlos
+git pull <remote> <bra>		-> Descarga todos los cambios y hace merge
+git push <remote> <bra>		-> Publica todos los cambios en remoto
+
+# MERGE
+--------------------------------------------------------------------------------
+git merge <branch>		-> Hace merge del branch a tu local
+git rebase <branch>		-> Hace merge de local al branch
+git mergetool			-> Resuelve conflictos de merge
+
+# UNDO
+--------------------------------------------------------------------------------
+git reset --hard HEAD		-> Descarta los cambios del directorio de trabajo
+git checkout HEAD <fil>		-> Descarta los cambios de un fichero
+
+git revert <commit>		-> Revierte un commit
+git reset --hard <cmit>		-> Vuelve a un commit anterior
+git reset <commit>		-> Guarda todos los cambios sin tags pendientes
+git reset --keep <cmit>		-> Preserve uncommited local changes
+
+# IGNORE FILES
+--------------------------------------------------------------------------------
+- Crear fichero .gitignore y escribir los ficheros que quieres excluir
+git add .
+git rm --cached <file>		-> Deja de seguir fichero para que git lo ignore
+git push origin master
