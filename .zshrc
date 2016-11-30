@@ -1,4 +1,17 @@
-# Path to your oh-my-zsh installation.
+ #Loads tmux
+if [[ ! $TERM =~ screen ]]; then
+	exec tmux
+fi	
+
+# Fonts powerline
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/share/powerline/bash/powerline.sh
+fi
+
+## Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
 export TERM="xterm-256color"
@@ -6,21 +19,30 @@ setopt RM_STAR_WAIT
 setopt interactivecomments
 setopt CORRECT
 
-# text, that Vim is going to be there for you
+# # text, that Vim is going to be there for you
 export EDITOR="vim"
 export USE_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
-# Alias
-source ~/.oh-my-zsh/lib/alias.zsh
+# Theme zsh
+ZSH_THEME="agnoster"
 
-#ZSH_THEME="xiong-chiamiov"
-ZSH_THEME="robbyrussell"
-
-plugins=(git autojump colored-man colorize extract zsh-syntax-highlighting)
+plugins=(git footer autojump colored-man colorize extract zsh-syntax-highlighting)
 
 # User configuration
-export PATH="/usr/lib/jvm/java-7-openjdk-amd64/bin:~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-
 source $ZSH/oh-my-zsh.sh
-setopt rm_star_silent       
+setopt rm_star_silent 
+
+setopt extended_glob
+
+autoload -Uz compinit promptinit
+setopt COMPLETE_ALIASES
+compinit
+promptinit
+
+# Load alias
+source $HOME/.aliases
+
+DEFAULT_USER=`whoami`
+
+# Sets the Mail Environment Variable

@@ -1,143 +1,94 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 " ___   ____(_)______ ___
-" __ | / /_  /__  __ `__ \
-" __ |/ /_  / _  / / / / /
-" _____/ /_/  /_/ /_/ /_/
+" " __ | / /_  /__  __ `__ \
+" " __ |/ /_  / _  / / / / /
+" " _____/ /_/  /_/ /_/ /_/
+" "
+" " Maintainer: rotceh
+" " Version: 0.2
+" " Last Change: 27.10.2016
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" Maintainer: Héctor Riesco
-" Version: 0.1
-" Last Change: 26.05.2016
-""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VUNDLE VIM CONFIG --------------------------------------------
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" Vundle plugin manager
-" ----------------------------------------------------
-set nocompatible              
-filetype off                 
-
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
+" " alternatively, pass a path where Vundle should install plugins
+" "call vundle#begin('~/some/path/here')
+"
+" " let Vundle manage Vundle, required
+" Para instalar escribir :PluginInstall
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'tpope/vim-fugitive'
-Plugin 'majutsushi/tagbar'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'nerdtree-ack'
-Plugin 'mileszs/ack.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'
-Plugin 'easymotion/vim-easymotion'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'Syntastic'
-Plugin 'colorizer'
-Plugin 'joonty/vdebug'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'OmniCppComplete'
-Plugin 'rstacruz/sparkup'
+Plugin 'dracula/vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'easymotion/vim-easymotion'
 
-" Optional:
-Plugin 'honza/vim-snippets'
-Plugin 'Valloric/MatchTagAlways'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-call vundle#end()
-filetype plugin indent on
+" Enable syntax highlight
+filetype plugin on
+syntax on
+" Color schema
+color dracula
 
-
-" Properties
-" ----------------------------------------------------
-set autoindent
-set background=dark
-set backspace=indent,eol,start
-set breakindent
-set cindent
+highlight ColorColumn ctermbg=red
 set colorcolumn=80
-set copyindent
-set expandtab
-set fileencoding=utf-8 
-set foldenable
-set foldlevelstart=10
-set foldmethod=manual
-set foldnestmax=10
-set history=1000
+set hlsearch
+set noexpandtab
 set hlsearch
 set incsearch
-set ignorecase
-set laststatus=2
-set lazyredraw
-set mouse=a
-set nocp
-set noerrorbells
-set noexpandtab
-set novisualbell
-set number
-set ruler
-set shiftwidth=4
-set showcmd
-set showcmd
 set showmatch
-set smartcase
-set smartindent
-set softtabstop=4
-set swapfile
+set ignorecase
+set mouse=a " Enable mouse
+set number " Show number line
+set relativenumber " Show relative number for the actual line to move faster
+
+" Tabs config
 set tabstop=4
-set title
-set undolevels=1000
-set wildmenu
-set wrap
+set shiftwidth=4
+set softtabstop=4
+set fileencoding=utf-8 
 
-colorscheme koehler
+" Highlight text selected
+hi Search cterm=NONE ctermfg=white ctermbg=red
 
-" Change the mapleader from \ to ,
-let mapleader=","
-
-" Keys mapping
-"----------------------------------------
-
-" Close html tags
-imap ,- </<C-X><C-O>
+let mapleader = ","
 
 " Open vim cheatsheets to edit
 nnoremap <leader>ec :vsp ~/.vim_cheatsheets<CR>
-
-" Open vimrc to edit
+" " Open vimrc to edit
 nnoremap <leader>ev :tab sp ~/.vimrc<CR>
-
-" turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
-
-" space open/closes folds
-nnoremap <space> za
 
 " Move lines backward or forward
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
-" Executes NerdTree
-map <Leader>n <plug>NERDTreeTabsToggle<CR>
+" Nerdtree
+nmap <leader>n :NERDTree<cr>
 
-" Ctags
-map <f12> :!ctags -R .<cr>
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
 
-" Select All
-map <C-a> <esc>ggVG<CR>
+" Open file and save file 
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :wq<CR>
 
-" Open Tagbar
-nmap <F8> :TagbarToggle<CR>
+" Move cursor to previous position when opens file
+augroup resCur
+  autocmd!
+  autocmd BufReadPost * call setpos(".", getpos("'\""))
+augroup END
 
-" Build
-map <F9> :make -j 2 && make run<CR>
-let &errorformat="%-GIn file included from %f:%l:%c\\,,%-GIn file included from %f:%l:%c:,%-Gfrom %f:%l\\,,-Gfrom %f:%l:%c\\,," . &errorformat
-set errorformat+=%D%*\\a[%*\\d]:\ Entering\ directory\ `%f'
-
-" Copy to clipboard system
-vnoremap <C-c> "*y
-
-
-" Configuration modules 
-" ----------------------------------------------------
+imap <C-space> <Plug>IMAP_JumpForward
+nmap <C-space> <Plug>IMAP_JumpForward
+vmap <C-space> <Plug>IMAP_JumpForward
 
 " CtrlP settings
 let g:ctrlp_working_path_mode = 'ra'
@@ -145,16 +96,6 @@ let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-
-" Ag settings
-set runtimepath^=~/.vim/bundle/ag
-
-" Backup settings
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set writebackup
 
 " Syntastic settings
 set statusline+=%#warningmsg#
@@ -165,3 +106,24 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" NerdTree
+let NERDTreeShowBookmarks=1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+" vim markdown
+let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 0
+
+"##### FUNCIONES #############################################################
+" Llamadas a funciones
+nnoremap <C-n> :call ToggleRelativeNumber()<cr>
+
+function! ToggleRelativeNumber()
+	if(&number == 1)
+        set relativenumber!
+    else
+        set norelativenumber
+    endif
+endfunction

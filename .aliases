@@ -1,0 +1,48 @@
+alias cd1="cd ../"
+alias cd2="cd ../../"
+alias cd3="cd ../../../"
+alias cd4="cd ../../../../"
+alias cd5="cd ../../../../../"
+
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+alias ......="cd ../../../../../"
+
+alias ls='ls --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+alias ll='ls -lh'
+alias la='ls -lah'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands. Use like so: sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias ippublica="curl ipv4.icanhazip.com"
+
+alias ev="vim ~/.vimrc"
+alias ea="vim ~/.bash_aliases"
+alias eb="vim ~/.bashrc"
+alias ez="vim ~/.zshrc"
+alias et="vim ~/.tmux.conf"
+alias em="vim ~/.muttrc"
+
+alias listusb="mount | grep -i udisks | awk '{print $1}'"
+#alias burpsuite="java -Xmx2g -jar /opt/burpsuite_free_v1.7.06.jar"
+#alias loadmodules="systemctl status systemd-modules-load.service"
+
+alias c="cheat" 
+alias cl="cheat -L"
+alias cg="cheat -G"
+alias ce="cheat -e"
+alias ca="cheat -a"
+alias ch="cheat -h"
+
+alias meteo="curl wttr.in/Madrid"
