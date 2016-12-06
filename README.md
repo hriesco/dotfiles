@@ -25,3 +25,5 @@
 	`cp -r ./ ~/`
 	
 	`cp alias.zsh ~/.oh-my-zsh/lib/`
+
+- Run vim and type :PluginInstall
