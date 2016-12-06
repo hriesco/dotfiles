@@ -75,6 +75,11 @@ nmap <leader>n :NERDTree<cr>
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
+" Poweline
+"set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+"set laststatus=2
+"set t_Co=256
+
 " Open file and save file 
 nnoremap <Leader>o :CtrlP<CR>
 nnoremap <Leader>w :w<CR>
