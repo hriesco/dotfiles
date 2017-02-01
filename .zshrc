@@ -7,6 +7,15 @@ if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.z
 	source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
+# Fonts powerline
+#if [ -f `which powerline-daemon` ]; then
+  #powerline-daemon -q
+  #POWERLINE_BASH_CONTINUATION=1
+  #POWERLINE_BASH_SELECT=1
+  #. /usr/share/powerline/bash/powerline.sh
+  #~/.local/lib/python2.7/site-packages/powerline/binding/bash/powerline.sh
+#fi
+
 ## Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
