@@ -26,4 +26,6 @@
 	
 	`cp alias.zsh ~/.oh-my-zsh/lib/`
 
+	`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+
 - Run vim and type :PluginInstall
