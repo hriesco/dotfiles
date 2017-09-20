@@ -21,10 +21,26 @@
 * Clone this repo in a directory and copy the files to your /home/user/ directory ( ~/ )
 			
 	`git clone https://github.com/hriesco/dotfiles`
-
-	`cp -r ./ ~/`
 	
 	`sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
+
+	`git clone https://github.com/powerline/fonts.git --depth=1`
+
+	`cd fonts`
+
+	`./install.sh`
+
+	`cd ..`
+
+	`rm -rf fonts`
+
+	`cp -r ./ ~/`
+
+	`https://github.com/garabik/grc.git`
+
+	`cd grc`
+
+	`./install.sh`
 
 	`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
