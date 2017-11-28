@@ -44,4 +44,7 @@
 
 	`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
+	`CTRL + a + I`  (Install tmux plugins [tmux-yank])
+
+
 - Run vim and type :PluginInstall
