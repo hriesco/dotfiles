@@ -36,7 +36,7 @@
 
 	`cp -r ./ ~/`
 
-	`https://github.com/garabik/grc.git`
+	`git clone https://github.com/garabik/grc.git`
 
 	`cd grc`
 
@@ -45,6 +45,7 @@
 	`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
 	`CTRL + a + I`  (Install tmux plugins [tmux-yank])
-
+	
+	`sed -i 's/\/usr\/bin\/grc/\/usr\/local\/bin\/grc/g' ~/.aliases` 
 
 - Run vim and type :PluginInstall
