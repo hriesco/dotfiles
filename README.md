@@ -42,10 +42,14 @@
 
 	`./install.sh`
 
+	`git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
+
 	`git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
 	`CTRL + a + I`  (Install tmux plugins [tmux-yank])
 	
 	`sed -i 's/\/usr\/bin\/grc/\/usr\/local\/bin\/grc/g' ~/.aliases` 
+
+	`tmux source ~/.tmux.conf`
 
 - Run vim and type :PluginInstall
