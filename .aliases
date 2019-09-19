@@ -1,10 +1,3 @@
-alias kb_cool="cd ~/.msi-klm/; sudo nodejs msi-keyboard-CLI.js -t cool"
-alias kb_orange="cd ~/.msi-klm/; sudo nodejs msi-keyboard-CLI.js left orange light 0 -k off right red"
-alias kb_gaming="cd ~/.msi-klm/; sudo nodejs msi-keyboard-CLI.js -m gaming"
-
-alias bpp="/home/user/.config/i3/scripts/bpp"
-alias bmm="/home/user/.config/i3/scripts/bmm"
-
 alias www="cd /var/www/html/"
 alias cd1="cd ../"
 alias cd2="cd ../../"
@@ -22,80 +15,76 @@ alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
 alias ll='ls -lh'
 alias la='ls -lah'
 alias l='ls -CF'
 
-# Add an "alert" alias for long running commands. Use like so: sleep 10; alert
-
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
+## Get external IP address
+alias ipx="curl -s http://ipinfo.io/ip"
 alias ippublica="curl ipv4.icanhazip.com"
 
+## DNS - External IP #1
+alias dns1="dig +short @resolver1.opendns.com myip.opendns.com"
+## DNS - External IP #2
+alias dns2="dig +short @208.67.222.222 myip.opendns.com"
+### DNS - Check ("#.abc" is Okay)
+alias dns3="dig +short @208.67.220.220 which.opendns.com txt"
+
+
+alias meteo="curl wttr.in/Madrid"
+
+# Edit common file configs
 alias ev="vim ~/.vimrc"
 alias ea="vim ~/.aliases"
 alias eb="vim ~/.bashrc"
 alias ez="vim ~/.zshrc"
-alias et="vim ~/.tmux.conf"
-alias em="vim ~/.muttrc"
+alias et="vim ~/.tmux.
+onf"
+alias em="vim ~/.muttrc
 
 alias listusb="mount | grep -i udisks | awk '{print $1}'"
 
-alias burpsuitefree="java -jar /opt/BurpSuiteFree/burp*.jar &"
-alias burpsuitepro="java -jar ~/opt/Burp1.7.1/BurpLoader.jar &"
-#alias loadmodules="systemctl status systemd-modules-load.service"
-
-alias meteo="curl wttr.in/Madrid"
 ## grc diff alias
-alias diff='/usr/bin/grc /usr/bin/diff'
+alias diff='/usr/local/bin/grc /usr/bin/diff'
 
 ## grc dig alias
-alias dig='/usr/bin/grc /usr/bin/dig'
+alias dig='/usr/local/bin/grc /usr/bin/dig'
 
 ## grc gcc alias
-alias gcc='/usr/bin/grc /usr/bin/gcc'
+alias gcc='/usr/local/bin/grc /usr/bin/gcc'
 
 ## grc ifconfig alias
-alias ifconfig='/usr/bin/grc /sbin/ifconfig'
+alias ifconfig='/usr/local/bin/grc /sbin/ifconfig'
 
 ## grc mount alias
-alias mount='/usr/bin/grc /bin/mount'
+alias mount='/usr/local/bin/grc /bin/mount'
 
 ## grc netstat alias
-alias netstat='/usr/bin/grc /bin/netstat'
+alias netstat='/usr/local/bin/grc /bin/netstat'
 
 ## grc ping alias
-alias ping='/usr/bin/grc /bin/ping'
+alias ping='/usr/local/bin/grc /bin/ping'
 
 ## grc ps alias
-alias ps='/usr/bin/grc /bin/ps'
+alias ps='/usr/local/bin/grc /bin/ps'
 
 ## grc tail alias
-alias tail='/usr/bin/grc /usr/bin/tail'
+alias tail='/usr/local/bin/grc /usr/bin/tail'
 
 ## grc traceroute alias
-alias traceroute='/usr/bin/grc /usr/sbin/traceroute'
+alias traceroute='/usr/local/bin/grc /usr/sbin/traceroute'
 
 ## grc wdiff alias
-alias wdiff='/usr/bin/grc '
+alias wdiff='/usr/local/bin/grc '
 
 ## grep aliases
 alias grep="grep --color=always"
 alias ngrep="grep -n"
-
 alias egrep="egrep --color=auto"
-
 alias fgrep="fgrep --color=auto"
 
 ## tmux
 alias tmux="tmux attach || tmux new"
-
-## axel
-alias axel="axel -a"
 
 ## screen
 alias screen="screen -xRR"
@@ -112,18 +101,6 @@ alias ports="netstat -tulanp"
 
 ## Get header
 alias header="curl -I"
-
-## Get external IP address
-alias ipx="curl -s http://ipinfo.io/ip"
-
-## DNS - External IP #1
-alias dns1="dig +short @resolver1.opendns.com myip.opendns.com"
-
-## DNS - External IP #2
-alias dns2="dig +short @208.67.222.222 myip.opendns.com"
-
-### DNS - Check ("#.abc" is Okay)
-alias dns3="dig +short @208.67.220.220 which.opendns.com txt"
 
 ## Extract file, example. "ex package.tar.bz2"
 ex() {
@@ -162,7 +139,7 @@ alias hogs="for i in G M K; do du -ah | grep [0-9]$i | sort -nr -k 1; done | hea
 alias ll="ls -l --block-size=1 --color=auto"
 
 ## nmap
-alias nmap="nmap --reason --open --stats-every 3m --max-retries 1 --max-scan-delay 20 --defeat-rst-ratelimit"
+alias nmap="/usr/local/bin/grc nmap --reason --open --stats-every 3m --max-retries 1 --max-scan-delay 20 --defeat-rst-ratelimit"
 
 ## aircrack-ng
 alias aircrack-ng="aircrack-ng -z"
@@ -192,20 +169,6 @@ alias rdesktop="rdesktop -z -P -g 90% -r disk:local=\"/tmp/\""
 ## python http
 alias http="python2 -m SimpleHTTPServer"
 
-## www
-alias wwwroot="cd /var/www/html/"
-#alias www="cd /var/www/html/"
-
-## ftp
-alias ftproot="cd /var/ftp/"
-
-## tftp
-alias tftproot="cd /var/tftp/"
-
-## smb
-alias smb="cd /var/samba/"
-#alias smbroot="cd /var/samba/"
-
 ## edb
 alias edb="cd /usr/share/exploitdb/platforms/"
 alias edbroot="cd /usr/share/exploitdb/platforms/"
@@ -227,4 +190,3 @@ function _msfvenom-list-generate {
   msfvenom --list encoders > ~/.msf4/msfvenom/encoders
   msfvenom --help-formats 2> ~/.msf4/msfvenom/formats
 }
-alias notas="python /opt/OSCP/notas.py"
