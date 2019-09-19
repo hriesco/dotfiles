@@ -10,7 +10,7 @@
 
 * Zsh 
 
-  `sudo apt install zsh`
+  `sudo apt install -y zsh tmux vim`
 
 * Set zsh as your login shell
  
