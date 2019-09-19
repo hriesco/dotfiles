@@ -10,7 +10,7 @@
 
 * Zsh 
 
-  `sudo aptitude install zsh`
+  `sudo apt install zsh`
 
 * Set zsh as your login shell
  
