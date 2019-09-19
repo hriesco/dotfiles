@@ -19,6 +19,7 @@
 ## Install
 
 * Clone this repo in a directory and copy the files to your /home/user/ directory ( ~/ )
+* Do the same with the root user, but change the -zshrc with .zshrc_root
 			
 	`git clone https://github.com/hriesco/dotfiles`
 	
