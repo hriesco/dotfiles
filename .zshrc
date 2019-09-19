@@ -32,7 +32,7 @@ export VISUAL=$EDITOR
 # Theme zsh
 ZSH_THEME="agnoster"
 
-plugins=(git footer autojump colored-man colorize extract zsh-syntax-highlighting)
+plugins=(git colorize extract zsh-autosuggestions zsh-syntax-highlighting)
 
 # User configuration
 source $ZSH/oh-my-zsh.sh
