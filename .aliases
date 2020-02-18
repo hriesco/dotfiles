@@ -44,38 +44,29 @@ alias em="vim ~/.muttrc
 
 alias listusb="mount | grep -i udisks | awk '{print $1}'"
 
-## grc diff alias
 alias diff='/usr/local/bin/grc /usr/bin/diff'
-
-## grc dig alias
 alias dig='/usr/local/bin/grc /usr/bin/dig'
-
-## grc gcc alias
 alias gcc='/usr/local/bin/grc /usr/bin/gcc'
-
-## grc ifconfig alias
 alias ifconfig='/usr/local/bin/grc /sbin/ifconfig'
-
-## grc mount alias
 alias mount='/usr/local/bin/grc /bin/mount'
-
-## grc netstat alias
 alias netstat='/usr/local/bin/grc /bin/netstat'
-
-## grc ping alias
 alias ping='/usr/local/bin/grc /bin/ping'
-
-## grc ps alias
 alias ps='/usr/local/bin/grc /bin/ps'
-
-## grc tail alias
 alias tail='/usr/local/bin/grc /usr/bin/tail'
-
-## grc traceroute alias
 alias traceroute='/usr/local/bin/grc /usr/sbin/traceroute'
-
-## grc wdiff alias
-alias wdiff='/usr/local/bin/grc '
+alias nmap='/usr/local/bin/grc /usr/bin/nmap'
+alias ip='/usr/local/bin/grc /bin/ip'
+alias mtr='/usr/local/bin/grc /usr/bin/mtr'
+alias env='/usr/local/bin/grc /usr/bin/env'
+alias free='/usr/local/bin/grc /usr/bin/free'
+alias fdisk='/usr/local/bin/grc /sbin/fdisk'
+alias make='/usr/local/bin/grc /usr/bin/make'
+alias id='/usr/local/bin/grc /usr/bin/id'
+alias iptables='/usr/local/bin/grc /usr/sbin/iptables'
+alias ls='/usr/local/bin/grc /bin/ls'
+alias head='/usr/local/bin/grc /usr/bin/head'
+alias tail='/usr/local/bin/grc /usr/bin/tail'
+alias dig='/usr/local/bin/grc /usr/bin/dig'
 
 ## grep aliases
 alias grep="grep --color=always"
