@@ -40,7 +40,7 @@ alias ea="vim ~/.aliases"
 alias eb="vim ~/.bashrc"
 alias ez="vim ~/.zshrc"
 alias et="vim ~/.tmux.conf"
-alias em="vim ~/.muttrc
+alias em="vim ~/.muttrc"
 
 alias listusb="mount | grep -i udisks | awk '{print $1}'"
 
@@ -122,9 +122,6 @@ alias hg="history | grep"
 ### Network Services
 alias listen="netstat -antp | grep LISTEN"
 
-### HDD size
-alias hogs="for i in G M K; do du -ah | grep [0-9]$i | sort -nr -k 1; done | head -n 11"
-
 ### Listing
 alias ll="ls -l --block-size=1 --color=auto"
 
@@ -139,11 +136,7 @@ alias airodump-ng="airodump-ng --manufacturer --wps --uptime"
 
 ## metasploit
 alias msfc="systemctl start postgresql; msfdb start; msfconsole -q \"\$@\""
-alias msfconsole="systemctl start postgresql; msfdb start; msfconsole \"\$@\""
-
-## mana-toolkit
-alias mana-toolkit-start="a2ensite 000-mana-toolkit;a2dissite 000-default; systemctl restart apache2"
-alias mana-toolkit-stop="a2dissite 000-mana-toolkit; a2ensite 000-default; systemctl restart apache2"
+alias msfconsole="systemctl start postgresql; msfdb start; msfconsole \"\$@\"
 
 ## ssh
 alias ssh-start="systemctl restart ssh"
