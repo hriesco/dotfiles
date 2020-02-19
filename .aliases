@@ -1,4 +1,5 @@
 alias www="cd /var/www/html/"
+
 alias cd1="cd ../"
 alias cd2="cd ../../"
 alias cd3="cd ../../../"
@@ -38,8 +39,7 @@ alias ev="vim ~/.vimrc"
 alias ea="vim ~/.aliases"
 alias eb="vim ~/.bashrc"
 alias ez="vim ~/.zshrc"
-alias et="vim ~/.tmux.
-onf"
+alias et="vim ~/.tmux.conf"
 alias em="vim ~/.muttrc
 
 alias listusb="mount | grep -i udisks | awk '{print $1}'"
@@ -63,7 +63,6 @@ alias fdisk='/usr/local/bin/grc /sbin/fdisk'
 alias make='/usr/local/bin/grc /usr/bin/make'
 alias id='/usr/local/bin/grc /usr/bin/id'
 alias iptables='/usr/local/bin/grc /usr/sbin/iptables'
-alias ls='/usr/local/bin/grc /bin/ls'
 alias head='/usr/local/bin/grc /usr/bin/head'
 alias tail='/usr/local/bin/grc /usr/bin/tail'
 alias dig='/usr/local/bin/grc /usr/bin/dig'
@@ -166,18 +165,3 @@ alias edbroot="cd /usr/share/exploitdb/platforms/"
 
 ## wordlist
 alias wordlists="cd /usr/share/wordlists/"
-
-alias msfvenom-list-all='cat ~/.msf4/msfvenom/all'
-alias msfvenom-list-nops='cat ~/.msf4/msfvenom/nops'
-alias msfvenom-list-payloads='cat ~/.msf4/msfvenom/payloads'
-alias msfvenom-list-encoders='cat ~/.msf4/msfvenom/encoders'
-alias msfvenom-list-formats='cat ~/.msf4/msfvenom/formats'
-alias msfvenom-list-generate='_msfvenom-list-generate'
-function _msfvenom-list-generate {
-  mkdir -p ~/.msf4/msfvenom/
-  msfvenom --list > ~/.msf4/msfvenom/all
-  msfvenom --list nops > ~/.msf4/msfvenom/nops
-  msfvenom --list payloads > ~/.msf4/msfvenom/payloads
-  msfvenom --list encoders > ~/.msf4/msfvenom/encoders
-  msfvenom --help-formats 2> ~/.msf4/msfvenom/formats
-}
