@@ -26,6 +26,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'dracula/vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -94,6 +95,9 @@ augroup END
 imap <C-space> <Plug>IMAP_JumpForward
 nmap <C-space> <Plug>IMAP_JumpForward
 vmap <C-space> <Plug>IMAP_JumpForward
+
+" Emmet change default key leader
+let g:user_emmet_leader_key='<C-Z>'
 
 " CtrlP settings
 let g:ctrlp_working_path_mode = 'ra'
