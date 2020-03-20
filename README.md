@@ -58,3 +58,4 @@
 	`tmux source ~/.tmux.conf`
 
 - Run vim and type :PluginInstall
+- Uncomment the 3 first lines of the file .zshrc for the root user
