@@ -56,4 +56,5 @@ source $HOME/.aliases
 
 DEFAULT_USER=`whoami`
 
-# Sets the Mail Environment Variable
+# Color change for autocomplete words
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180'
