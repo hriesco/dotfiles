@@ -1,7 +1,13 @@
- #Loads tmux
-if [[ ! $TERM =~ screen ]]; then
-	exec tmux
-fi	
+#Loads tmux
+# ACTIVAR ESTAS 3 LINEAS PARA ROOT
+#if command -v tmux>/dev/null; then
+#  [[ ! $TERM =~ "xterm-256color" ]] && [ -z $TMUX ] && exec tmux
+#fi
+
+# DESCATIVAR ESTAS 3 LINES PARA ROOT
+if command -v tmux>/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
 
 if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
 	source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
