@@ -82,9 +82,9 @@ nnoremap <leader><space> :nohlsearch<CR>
 "set t_Co=256
 
 " Open file and save file 
-nnoremap <Leader>o :CtrlP<CR>
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :wq<CR>
+" nnoremap <Leader>o :CtrlP<CR>
+" nnoremap <Leader>w :w<CR>
+" nnoremap <Leader>q :wq<CR>
 
 " Move cursor to previous position when opens file
 augroup resCur
@@ -100,16 +100,16 @@ vmap <C-space> <Plug>IMAP_JumpForward
 let g:user_emmet_leader_key='<C-Z>'
 
 " CtrlP settings
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_match_window = 'bottom,order:ttb'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+" let g:ctrlp_working_path_mode = 'ra'
+" let g:ctrlp_match_window = 'bottom,order:ttb'
+" let g:ctrlp_switch_buffer = 0
+" let g:ctrlp_working_path_mode = 0
+" let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
