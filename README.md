@@ -10,8 +10,10 @@
 
 * Zsh 
 
-  `sudo apt install -y zsh tmux vim`
+  `pacman -S zsh tmux vim`
 
+  `pacman -S powerline-fonts powerline`
+  
 * Set zsh as your login shell
  
   `chsh -s $(which zsh)`
