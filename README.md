@@ -4,7 +4,7 @@
 * But use it for whatever you want.
 * Before you install it in your system read first the dotfiles.
 * And adjust them for your operating system.
-* Files were tested for linux debian based systems.
+* Files were tested for linux debian and arch based systems.
 
 ## Requirements
 
