@@ -12,7 +12,7 @@
 
   `pacman -S zsh tmux vim`
 
-  `pacman -S powerline-fonts powerline`
+  `pacman -S powerline-fonts powerline vim-powerline`
   
 * Set zsh as your login shell
  
