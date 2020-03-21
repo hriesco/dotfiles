@@ -1,26 +1,9 @@
 #Loads tmux
-# ACTIVAR ESTAS 3 LINEAS PARA ROOT
-#if command -v tmux>/dev/null; then
-#  [[ ! $TERM =~ "xterm-256color" ]] && [ -z $TMUX ] && exec tmux
-#fi
 
-# DESCATIVAR ESTAS 3 LINES PARA ROOT
+# COMENTAR ESTAS 3 LINES PARA /root/.zshrc
 if command -v tmux>/dev/null; then
   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 fi
-
-if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-	source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
-
-# Fonts powerline
-#if [ -f `which powerline-daemon` ]; then
-  #powerline-daemon -q
-  #POWERLINE_BASH_CONTINUATION=1
-  #POWERLINE_BASH_SELECT=1
-  #. /usr/share/powerline/bash/powerline.sh
-  #~/.local/lib/python2.7/site-packages/powerline/binding/bash/powerline.sh
-#fi
 
 ## Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -58,3 +41,13 @@ DEFAULT_USER=`whoami`
 
 # Color change for autocomplete words
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180'
+
+
+# Load powerline zsh
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  source /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
+
