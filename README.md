@@ -10,7 +10,7 @@
 
 * Zsh 
 
-  `pacman -S zsh tmux vim`
+  `pacman -S zsh tmux vim fzf`
 
   `pacman -S powerline-fonts powerline vim-powerline`
   
