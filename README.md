@@ -58,6 +58,12 @@
 	`sed -i 's/\/usr\/bin\/grc/\/usr\/local\/bin\/grc/g' ~/.aliases` 
 
 	`tmux source ~/.tmux.conf`
-
+	
+	```
+	git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+	cd ~/.fzf/
+	./install
+	```
+	
 - Run vim and type :PluginInstall
 - Uncomment the 3 first lines of the file .zshrc for the root user
