@@ -42,7 +42,6 @@ DEFAULT_USER=`whoami`
 # Color change for autocomplete words
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=180'
 
-
 # Load powerline zsh
 if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
@@ -51,3 +50,4 @@ if [ -f `which powerline-daemon` ]; then
   source /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
