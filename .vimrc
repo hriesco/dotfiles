@@ -122,8 +122,8 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
 " vim markdown
-let g:instant_markdown_slow = 1
-let g:instant_markdown_autostart = 0
+" let g:instant_markdown_slow = 1
+" let g:instant_markdown_autostart = 0
 
 "##### FUNCIONES #############################################################
 " Llamadas a funciones
