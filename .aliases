@@ -1,16 +1,11 @@
-alias www="cd /var/www/html/"
+#!/usr/bin/env sh
 
+alias www="cd /var/www/html/"
 alias cd1="cd ../"
 alias cd2="cd ../../"
 alias cd3="cd ../../../"
 alias cd4="cd ../../../../"
 alias cd5="cd ../../../../../"
-
-alias ..="cd ../"
-alias ...="cd ../../"
-alias ....="cd ../../../"
-alias .....="cd ../../../../"
-alias ......="cd ../../../../../"
 
 alias ls='ls --color=auto'
 alias dir='dir --color=auto'
@@ -24,14 +19,6 @@ alias l='ls -CF'
 alias ipx="curl -s http://ipinfo.io/ip"
 alias ippublica="curl ipv4.icanhazip.com"
 
-## DNS - External IP #1
-alias dns1="dig +short @resolver1.opendns.com myip.opendns.com"
-## DNS - External IP #2
-alias dns2="dig +short @208.67.222.222 myip.opendns.com"
-### DNS - Check ("#.abc" is Okay)
-alias dns3="dig +short @208.67.220.220 which.opendns.com txt"
-
-
 alias meteo="curl wttr.in/Madrid"
 
 # Edit common file configs
@@ -44,37 +31,24 @@ alias em="vim ~/.muttrc"
 
 alias listusb="mount | grep -i udisks | awk '{print $1}'"
 
+alias ip='/usr/local/bin/grc /usr/bin/ip'
 alias diff='/usr/local/bin/grc /usr/bin/diff'
 alias dig='/usr/local/bin/grc /usr/bin/dig'
 alias gcc='/usr/local/bin/grc /usr/bin/gcc'
-alias ifconfig='/usr/local/bin/grc /sbin/ifconfig'
+alias ifconfig='/usr/local/bin/grc /usr/sbin/ifconfig'
 alias mount='/usr/local/bin/grc /bin/mount'
 alias netstat='/usr/local/bin/grc /bin/netstat'
 alias ping='/usr/local/bin/grc /bin/ping'
 alias ps='/usr/local/bin/grc /bin/ps'
 alias tail='/usr/local/bin/grc /usr/bin/tail'
 alias traceroute='/usr/local/bin/grc /usr/sbin/traceroute'
-alias nmap='/usr/local/bin/grc /usr/bin/nmap'
-alias ip='/usr/local/bin/grc /bin/ip'
-alias mtr='/usr/local/bin/grc /usr/bin/mtr'
-alias env='/usr/local/bin/grc /usr/bin/env'
-alias free='/usr/local/bin/grc /usr/bin/free'
-alias fdisk='/usr/local/bin/grc /sbin/fdisk'
-alias make='/usr/local/bin/grc /usr/bin/make'
-alias id='/usr/local/bin/grc /usr/bin/id'
-alias iptables='/usr/local/bin/grc /usr/sbin/iptables'
-alias head='/usr/local/bin/grc /usr/bin/head'
-alias tail='/usr/local/bin/grc /usr/bin/tail'
-alias dig='/usr/local/bin/grc /usr/bin/dig'
-
-## grep aliases
 alias grep="grep --color=always"
 alias ngrep="grep -n"
 alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 
 ## tmux
-alias tmux="tmux attach || tmux new"
+#alias tmux="tmux attach || tmux new"
 
 ## screen
 alias screen="screen -xRR"
@@ -82,9 +56,6 @@ alias screen="screen -xRR"
 ## Checksums
 alias sha1="openssl sha1"
 alias md5="openssl md5"
-
-## Force create folders
-alias mkdir="/bin/mkdir -pv"
 
 ## List open ports
 alias ports="netstat -tulanp"
@@ -121,40 +92,11 @@ alias hg="history | grep"
 
 ### Network Services
 alias listen="netstat -antp | grep LISTEN"
+alias http="python -m http.server 8080"
 
-### Listing
-alias ll="ls -l --block-size=1 --color=auto"
+alias burpsuite="cd ~/Pentest/Web/Scanner/burpsuite; ./regenerate.sh"
+alias dirsearch="cd ~/Pentest/Web/Fuzzing/dirsearch"
 
-## nmap
-alias nmap="/usr/local/bin/grc nmap --reason --open --stats-every 3m --max-retries 1 --max-scan-delay 20 --defeat-rst-ratelimit"
-
-## aircrack-ng
-alias aircrack-ng="aircrack-ng -z"
-
-## airodump-ng 
-alias airodump-ng="airodump-ng --manufacturer --wps --uptime"
-
-## metasploit
-alias msfc="systemctl start postgresql; msfdb start; msfconsole -q \"\$@\""
-alias msfconsole="systemctl start postgresql; msfdb start; msfconsole \"\$@\"
-
-## ssh
-alias ssh-start="systemctl restart ssh"
-alias ssh-stop="systemctl stop ssh"
-
-## samba
-alias smb-start="systemctl restart smbd nmbd"
-alias smb-stop="systemctl stop smbd nmbd"
-
-## rdesktop
-alias rdesktop="rdesktop -z -P -g 90% -r disk:local=\"/tmp/\""
-
-## python http
-alias http="python2 -m SimpleHTTPServer"
-
-## edb
-alias edb="cd /usr/share/exploitdb/platforms/"
-alias edbroot="cd /usr/share/exploitdb/platforms/"
-
-## wordlist
-alias wordlists="cd /usr/share/wordlists/"
+# Tmux
+alias tka="tmux kill-session -a"
+alias tbb="~/Scripts/tmux-bbounty.sh"
