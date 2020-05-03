@@ -8,7 +8,11 @@
 " " Version: 0.3
 " " Last Change: 06.12.2016
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""
-"
+""
+
+" Usefull key combinations
+" Ctrl+w+g+Shift+f		Open file under the cursor
+
 " VUNDLE VIM CONFIG --------------------------------------------
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -50,6 +54,14 @@ set mouse=a " Enable mouse
 set number " Show number line
 set relativenumber " Show relative number for the actual line to move faster
 
+" Line wrapping
+set nowrap
+set linebreak
+set showbreak=▹
+
+" Auto indent what you can
+set autoindent
+
 " Tabs config
 set tabstop=4
 set shiftwidth=4
@@ -70,11 +82,15 @@ nnoremap <leader>ev :tab sp ~/.vimrc<CR>
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
 
+" grep recursively for word under cursor
+nmap <Leader>g :tabnew\|read !grep -Hnr '<C-R><C-W>'<CR>
+
 " Nerdtree
 nmap <leader>n :NERDTree<cr>
 
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
+
 
 " Poweline
 "set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
@@ -82,9 +98,9 @@ nnoremap <leader><space> :nohlsearch<CR>
 "set t_Co=256
 
 " Open file and save file 
-" nnoremap <Leader>o :CtrlP<CR>
-" nnoremap <Leader>w :w<CR>
-" nnoremap <Leader>q :wq<CR>
+"nnoremap <Leader>o :CtrlP<CR>
+"nnoremap <Leader>w :w<CR>
+"nnoremap <Leader>q :wq<CR>
 
 " Move cursor to previous position when opens file
 augroup resCur
@@ -100,21 +116,21 @@ vmap <C-space> <Plug>IMAP_JumpForward
 let g:user_emmet_leader_key='<C-Z>'
 
 " CtrlP settings
-" let g:ctrlp_working_path_mode = 'ra'
-" let g:ctrlp_match_window = 'bottom,order:ttb'
-" let g:ctrlp_switch_buffer = 0
-" let g:ctrlp_working_path_mode = 0
-" let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+"let g:ctrlp_working_path_mode = 'ra'
+"let g:ctrlp_match_window = 'bottom,order:ttb'
+"let g:ctrlp_switch_buffer = 0
+"let g:ctrlp_working_path_mode = 0
+"let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 " Syntastic settings
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 " NerdTree
 let NERDTreeShowBookmarks=1
@@ -122,8 +138,8 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
 " vim markdown
-" let g:instant_markdown_slow = 1
-" let g:instant_markdown_autostart = 0
+"let g:instant_markdown_slow = 1
+"let g:instant_markdown_autostart = 0
 
 "##### FUNCIONES #############################################################
 " Llamadas a funciones
@@ -137,12 +153,19 @@ function! ToggleRelativeNumber()
     endif
 endfunction
 
+
+" Visual prompt for command completion
+set wildmenu
+
 " Load powerline for vim
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+"python3 from powerline.vim import setup as powerline_setup
+"python3 powerline_setup()
+"python3 del powerline_setup
+
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=2 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 set t_Co=256
+
 set backspace=indent,eol,start
