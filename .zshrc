@@ -52,4 +52,6 @@ if [ -f `which powerline-daemon` ]; then
   # source /usr/share/powerline/bindings/zsh/powerline.zsh
 fi
 
+PATH=$PATH=/usr/sbin
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
