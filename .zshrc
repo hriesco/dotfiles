@@ -48,6 +48,8 @@ if [ -f `which powerline-daemon` ]; then
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1
   source /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+  # Descomentar para Kali Linux
+  # source /usr/share/powerline/bindings/zsh/powerline.zsh
 fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
