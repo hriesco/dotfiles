@@ -66,3 +66,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Proceso de autocompletado de ZSH pilla los colores que le asignamos previamente
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Reasigna las teclas END e Inicio a sus valores correctos
+bindkey  "^[[1~"   beginning-of-line
+bindkey  "^[[4~"   end-of-line
