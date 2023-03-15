@@ -10,7 +10,7 @@
 
 * Zsh 
 
-  `pacman -S zsh tmux vim fzf powerline-fonts powerline vim-powerline xsel xclip git`
+  `pacman -S zsh tmux vim powerline-fonts powerline vim-powerline xsel xclip git`
   
   `apt install -y zsh tmux vim powerline xsel xclip`
   
