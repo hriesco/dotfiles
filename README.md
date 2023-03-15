@@ -12,7 +12,7 @@
 
   `pacman -S zsh tmux vim fzf powerline-fonts powerline vim-powerline xsel xclip git`
   
-  `apt install -y zsh tmux vim fzf powerline xsel xclip`
+  `apt install -y zsh tmux vim powerline xsel xclip`
   
 * Set zsh as your login shell
  
