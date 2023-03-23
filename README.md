@@ -10,9 +10,9 @@
 
 * Zsh 
 
-  `pacman -S zsh tmux vim powerline-fonts powerline vim-powerline xsel xclip git`
+  `pacman -S zsh tmux vim powerline xsel xclip git ufw`
   
-  `apt install -y zsh tmux vim powerline xsel xclip`
+  `apt install -y zsh tmux vim powerline xsel xclip git ufw`
   
 * Set zsh as your login shell
  
@@ -70,3 +70,12 @@
 - Run vim and type :PluginInstall
 - Uncomment the 3 first lines of the file .zshrc for the root user
 - If any command of grc works for example "ip a" run this: `sed -i 's/\/usr\/bin\/grc/\/usr\/local\/bin\/grc/g' ~/.aliases`
+ 
+## Firewall (as root)
+	```
+    	ufw default deny incoming
+    	ufw default allow outgoing
+	ufw allow 22
+	ufw enable
+	ufw status verbose
+	```
