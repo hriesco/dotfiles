@@ -73,10 +73,10 @@
  
 ## Firewall (as root)
 
-	```
-    	ufw default deny incoming
-    	ufw default allow outgoing
-	ufw allow 22
-	ufw enable
-	ufw status verbose
-	```
+```
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow 22
+ufw enable
+ufw status verbose
+```
