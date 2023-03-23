@@ -72,6 +72,7 @@
 - If any command of grc works for example "ip a" run this: `sed -i 's/\/usr\/bin\/grc/\/usr\/local\/bin\/grc/g' ~/.aliases`
  
 ## Firewall (as root)
+
 	```
     	ufw default deny incoming
     	ufw default allow outgoing
