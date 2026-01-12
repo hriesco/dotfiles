@@ -70,7 +70,17 @@
 - Run vim and type :PluginInstall
 - Uncomment the 3 first lines of the file .zshrc for the root user
 - If any command of grc works for example "ip a" run this: `sed -i 's/\/usr\/bin\/grc/\/usr\/local\/bin\/grc/g' ~/.aliases`
- 
+
+## Fonts 
+	```
+	mkdir -p ~/.local/share/fonts 
+	cd ~/.local/share/fonts
+	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
+	unzip FiraCode.zip
+	rm FiraCode.zip
+	fc-cache -fv
+	```
+
 ## Firewall (as root)
 
 ```
