@@ -10,9 +10,9 @@
 
 * Zsh 
 
-  `pacman -S zsh tmux vim powerline xsel xclip git ufw`
+  `pacman -S zsh tmux vim powerline xsel xclip git ufw lsd curl wget net-tools whois nmap`
   
-  `apt install -y zsh tmux vim powerline xsel xclip git ufw`
+  `apt install -y zsh tmux vim powerline xsel xclip git ufw lsd curl wget net-tools whois nmap`
   
 * Set zsh as your login shell
  
@@ -72,14 +72,15 @@
 - If any command of grc works for example "ip a" run this: `sed -i 's/\/usr\/bin\/grc/\/usr\/local\/bin\/grc/g' ~/.aliases`
 
 ## Fonts 
-	```
-	mkdir -p ~/.local/share/fonts 
-	cd ~/.local/share/fonts
-	wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
-	unzip FiraCode.zip
-	rm FiraCode.zip
-	fc-cache -fv
-	```
+
+```
+mkdir -p ~/.local/share/fonts 
+cd ~/.local/share/fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip
+unzip FiraCode.zip
+rm FiraCode.zip
+fc-cache -fv
+```
 
 ## Firewall (as root)
 
